@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Bootstrap-stackview by yuhua-chen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Bootstrap-stackview</h1>
+        <p>This is a stack-like way to display view and toggle with breadcrumb.</p>
+
+        <p class="view"><a href="https://github.com/yuhua-chen/bootstrap-stackview">View the Project on GitHub <small>yuhua-chen/bootstrap-stackview</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/yuhua-chen/bootstrap-stackview/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/yuhua-chen/bootstrap-stackview/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/yuhua-chen/bootstrap-stackview">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="bootstrap-stackview" class="anchor" href="#bootstrap-stackview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootstrap-stackview</h1>
+
+<p>This is a plugin to display views like stack behavior, and support using bootstrap's data api.It's simple and easy to use.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Your main view goes here:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>stackview example1<span class="pl-pds">"</span></span> <span class="pl-e">data-toggle</span>=<span class="pl-s1"><span class="pl-pds">"</span>.breadcrumb<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>view<span class="pl-pds">"</span></span> <span class="pl-e">data-title</span>=<span class="pl-s1"><span class="pl-pds">"</span>Stack 1<span class="pl-pds">"</span></span>&gt;
+      ...
+  &lt;/<span class="pl-ent">div</span>&gt;
+  ...
+&lt;/<span class="pl-ent">div</span>&gt; </pre></div>
+
+<p>and the control button:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>btn-group<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">button</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>button<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>btn btn-default<span class="pl-pds">"</span></span> <span class="pl-e">data-target</span>=<span class="pl-s1"><span class="pl-pds">"</span>.example1<span class="pl-pds">"</span></span> <span class="pl-e">data-action</span>=<span class="pl-s1"><span class="pl-pds">"</span>pop<span class="pl-pds">"</span></span>&gt;Pop&lt;/<span class="pl-ent">button</span>&gt;
+  &lt;<span class="pl-ent">button</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>button<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>btn btn-default<span class="pl-pds">"</span></span> <span class="pl-e">data-target</span>=<span class="pl-s1"><span class="pl-pds">"</span>.example1<span class="pl-pds">"</span></span> <span class="pl-e">data-action</span>=<span class="pl-s1"><span class="pl-pds">"</span>push<span class="pl-pds">"</span></span>&gt;Push&lt;/<span class="pl-ent">button</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>the last breadcumb:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">ol</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>breadcrumb<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">ol</span>&gt;</pre></div>
+
+<p>simple to init:</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s1"><span class="pl-pds">'</span>.stackview<span class="pl-pds">'</span></span>).stackview()
+
+<span class="pl-c">//bind event</span>
+$.(<span class="pl-s1"><span class="pl-pds">'</span>stackview<span class="pl-pds">'</span></span>).on(<span class="pl-s1"><span class="pl-pds">'</span>action.cyh.stackview<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">e</span>) { }</pre></div>
+
+<h2>
+<a id="paraments" class="anchor" href="#paraments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paraments</h2>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interval</td>
+<td align="center">number</td>
+<td align="left">The duration of animation to display view.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th align="center">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action.cyh.stackview</td>
+<td align="center">This event fires immediately when the action instance method is invoked.</td>
+</tr>
+</tbody>
+</table>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/yuhua-chen">yuhua-chen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40663221-5");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
